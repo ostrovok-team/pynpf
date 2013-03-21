@@ -21,7 +21,7 @@ class do_develop(develop):
 setup(
     cmdclass={'develop': do_develop,},
     name='pynpf',
-    version='0.1.1',
+    version='0.1.2',
     packages=['pynpf'],
     package_dir={'pynpf': '.'},
     package_data={'pynpf': ['pynpf/*']},
