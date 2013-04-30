@@ -11,7 +11,7 @@ def install_deps():
     print "Installing dependencies"
     cdir = os.path.abspath(os.path.dirname(__file__))
     os.chdir(cdir)
-    check_call(['git', 'submodule', 'update', '--init', '--force'])
+    check_call(['git', 'submodule', 'update', '--init', '--recursive', '--force'])
     os.chdir(os.path.join(cdir, 'pynpf/npf'))
     for filename in glob.glob('.git*'):
         if os.path.isfile(filename):
