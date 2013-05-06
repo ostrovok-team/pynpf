@@ -12,7 +12,7 @@ def install_deps():
     cdir = os.path.abspath(os.path.dirname(__file__))
     os.chdir(cdir)
     shutil.rmtree('pynpf/npf', ignore_errors=True)
-    check_call(['git', 'submodule', 'update', '--init', '--force'])
+    check_call(['git', 'submodule', 'update', '--init', '--recursive', '--force'])
     os.chdir(os.path.join(cdir, 'pynpf/npf'))
     for filename in glob.glob('.git*'):
         if os.path.isfile(filename):
@@ -30,7 +30,7 @@ class do_develop(develop):
 setup(
     cmdclass={'develop': do_develop,},
     name='pynpf',
-    version='0.1.3',
+    version='0.1.5',
     packages=['pynpf'],
     package_dir={'pynpf': '.'},
     package_data={'pynpf': ['pynpf/*']},
